@@ -1,0 +1,79 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+* user_info
+*/
+class App_model extends CI_Model
+{
+
+    function __construct()
+    {
+        parent::__construct();
+       $this->load->database();
+    }
+    public function getLasteVersion()
+    {
+    	$query = $this->db->query("select * from master order by version desc limit 1");
+         return ($query->num_rows() > 0) ? 
+                $query->result_array() : FALSE;
+    }
+    
+    public function get_link($name)
+    {
+        
+        $query = $this->db->query("select appLink from appdigger where appName = '".$name."'");
+        
+        $back =  ($query->num_rows() > 0) ? 
+                $query->result_array() : FALSE;
+        return $back;
+        
+    }
+
+    public function save_des($info, $version)
+    {
+        
+        $this->db->query("insert into appdigger(userName, submitTime, appName, appIconSrc, shot1, shot2, shot3, shot4, appDes, promoteReason, applink, appCategory, version) values('".$info['userName']."','".$info['submitTime']."','".$info['appName']."','".$info['appIconSrc']."','".$info['screenShotSrc'][0]['shot_1']."','".$info['screenShotSrc'][1]['shot_2']."','".$info['screenShotSrc'][2]['shot_3']."','".$info['screenShotSrc'][3]['shot_4']."','".$info['appDes']."','".$info['promoteReason']."','".$info['appLink']."','".$info['appCategory']."',".$version.")");
+    }
+
+    public function get_from_version($version) 
+    {
+        $this->db->select('*');
+        $this->db->where('version', $version);
+        $query = $this->db->get('appdigger');
+        $query = $this->db->query('select * from appdigger where version ='.$version);
+        return ($query->num_rows() > 0) ? 
+                $query->result_array() : FALSE;
+        
+    }
+
+     public function get_nums()
+    {
+        $query = $this->db->query('select distinct version from appdigger');
+        return ($query->num_rows() > 0) ? 
+                $query->result_array() : FALSE;
+    }
+
+    public function save_master($num, $can)
+    {
+        $data = array(
+                'version' => $num,
+                'can' => $can
+            );
+        $this->db->where('mid', 1);
+        $res = $this->db->update('master', $data);
+        return $res;
+    } 
+    public function get_master() 
+    {
+        $query = $this->db->query('select * from master');
+        return ($query->num_rows() > 0) ? 
+                $query->result_array() : FALSE;
+    }
+    public function get_article_version($index) 
+    {
+        $query = $this->db->query("select * from appdigger");
+        return ($query->num_rows() > 0) ? 
+                $query->result_array() : FALSE;   
+    }  
+}
+?>

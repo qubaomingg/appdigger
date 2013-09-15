@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/appshare/!svn/ver/3/1/system/database/drivers/cubrid
+END
+cubrid_driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/appshare/!svn/ver/3/1/system/database/drivers/cubrid/cubrid_driver.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/appshare/!svn/ver/3/1/system/database/drivers/cubrid/index.html
+END
+cubrid_result.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/appshare/!svn/ver/3/1/system/database/drivers/cubrid/cubrid_result.php
+END
+cubrid_forge.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/appshare/!svn/ver/3/1/system/database/drivers/cubrid/cubrid_forge.php
+END
+cubrid_utility.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/appshare/!svn/ver/3/1/system/database/drivers/cubrid/cubrid_utility.php
+END

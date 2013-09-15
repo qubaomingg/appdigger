@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>爱屁屁分享会第六期纪要-20130531</title>
+    <link rel="stylesheet" href="<?php echo base_url().'/css/app.css'?>">
+</head>
+<body>
+    <div id="admin">
+        <a id="master" target="_blank" href="<?php echo base_url().'index.php/master'?>">进入后台管理 </a>
+        <a id="mail" target="_blank" href="">一键邮件 </a>
+    </div>
+
+<ul class="mod-nav">
+    <?php if($nums == FALSE) :?>
+        <li class="mod-nav__item">还咩有小伙伴输入数据，静静等待=-=</li>
+    <?php else :?>
+
+        <?php foreach($nums as $key => $value) :?>
+            <li class="mod-nav__item"><a href="<?php echo base_url().'index.php/appdigger/get_version_content/'.$value['version']?>">第<?php echo $value['version']?>期 >></a></li>
+        <?php endforeach ;?> 
+    <?php endif;?>
+</ul>
+<div class="app-share">
+    <div class="share-title">
+        <?php if($nums == FALSE) :?>
+            <h1 class="share-name">【会议纪要】爱屁屁分享会第 ? 期</h1>
+        <?php else :?>
+
+            <h1 class="share-name">【会议纪要】爱屁屁分享会第<?php echo $apps[0]['version']?>期</h1>
+        <?php endif;?>
+        
+    </div>
+    <ul class="app-list">
+        
+        <?php if($apps == FALSE) :?>
+        <span style="margin-bottom:100px;display:block" class="mod-nav__item">木有数据=。=</span>
+        <?php else :?>
+            <?php foreach ($apps as $key => $value) :?>
+                <li class="app-item">
+                    <div class="app-main">
+                        <a class="app-logo" href="<?php echo $value['appLink']?>">
+                            <img class="logo-img" style="height:175px;width:175px;" src="<?php echo $value['appIconSrc']?>" alt=""/>
+                            <span class="logo-mask"></span>
+                        </a>
+                       
+                        <h2 class="app-title"><a href="<?php echo $value['appLink']?>"> <?php echo $value['appName'] ?></a></h2>
+                        <div class="app-intro"><strong>介绍：</strong><?php echo $value['appDes']?></div>
+                        <div class="app-intro"><strong>推荐理由：</strong><?php echo $value['promoteReason']?></div>
+                        <div class="app-more">
+                            <span class="recman">@<?php echo $value['userName']?></span>
+                            <img class="img-qrcode" src="<?php echo $value['erweilink'] ?>" alt=""/>
+                             <!-- short link -->
+                        </div>
+                    </div>
+                    <div class="app-screenshot">
+                        <img src="<?php echo $value['shot1']?>" alt=""/>
+                        <img src="<?php echo $value['shot2']?>" alt=""/>
+                        <img src="<?php echo $value['shot3']?>" alt=""/>
+                        <img src="<?php echo $value['shot4']?>" alt=""/>
+                    </div>
+                </li>    
+            <?php endforeach ;?>
+        <?php endif;?>
+    </ul>
+
+	<p class="bottom-tips">注：文中链接均为 App Store 中国区，如需US区，请自行切换。 <br><strong>本文网页版：</strong>http://mobile.oa.com/docs/app-share/note-6.html</p>
+    
+    <script src="<?php echo base_url().'js/jquery.js'?>"></script>
+    <script>
+        (function() {
+           
+            $('#mail').click(function() {
+                var link = "mailto: g_ECC_UX_mobile(移动终端设计中心) " + "?cc=rayliu(刘轶);sunrise(陈黎明) ;greatxu(胥浩);ivanehwang(黄杨斌)" + "&subject='爱屁屁'分享会" + "&body = '"+ $('#tmpcanvas')+"'";
+                window.location.href = link;
+                return false;
+            });
+        })();
+    </script>
+</div>
+<img id="tmpcanvas" src="" alt="">
+</body>
+</html>

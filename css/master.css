@@ -1,0 +1,59 @@
+body {
+	background: #020202;
+}
+.mod-master {
+	width: 600px;
+	text-align: center;	
+	color: #fff;
+	margin: 0 auto;
+	margin-top: 200px;
+}
+.mod-master__name {
+	font-size: 60px;
+}
+.mod-master__input {
+	font-size: 40px;
+}
+#num {
+	padding: 4px 20px;
+	width: 60px;
+	border-radius: 5px;
+	vertical-align: middle;
+	font-size: 30px;
+	
+}
+#num:focus  {
+	border: 2px solid #4D90FE;
+}
+.ok{
+	border:2px solid #4D90FE;
+	border-radius: 5px;
+	color: #4D90FE;
+}
+.fail{
+	border:2px solid #E74C3C;
+	border-radius: 5px;
+	color: #E74C3C;
+}
+
+#begin {
+	background-color: #1ABC9C;
+	width: 200px;
+	border-radius: 5px;
+	padding: 10px 20px;
+	display: inline-block;
+	text-decoration:none;
+	color: #fff;
+	font-size: 30px;
+	text-shadow: 1px 1px 1px gray;
+}
+#begin:hover {
+	background-color: #48C9B0;
+
+}
+#begin.on {
+	background-color: #E74C3C;
+}
+#begin.on:hover {
+	background-color: #EC7063;
+}

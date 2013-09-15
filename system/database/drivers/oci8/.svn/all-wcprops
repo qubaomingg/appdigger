@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/appshare/!svn/ver/3/1/system/database/drivers/oci8
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/appshare/!svn/ver/3/1/system/database/drivers/oci8/index.html
+END
+oci8_forge.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/appshare/!svn/ver/3/1/system/database/drivers/oci8/oci8_forge.php
+END
+oci8_utility.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/appshare/!svn/ver/3/1/system/database/drivers/oci8/oci8_utility.php
+END
+oci8_driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/appshare/!svn/ver/3/1/system/database/drivers/oci8/oci8_driver.php
+END
+oci8_result.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/appshare/!svn/ver/3/1/system/database/drivers/oci8/oci8_result.php
+END
